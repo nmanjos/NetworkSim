@@ -8,16 +8,21 @@ namespace NetworkSim
 {
     class Program
     {
-        public static int[] Dec2bin(int dec)
+        public static string Dec2bin(int dec)
             // returns an array of integers 
         {
-            int[] bin = new int[8]; ;
-            for (int i = 7; i < 0; i--)
+
+                
+            if (dec == 0)
             {
-                bin[i] = dec % 2;
-                dec = dec / 2;
+                return "";
             }
-            return bin;
+            else
+            {
+                int s = dec % 2;
+                return s + Dec2bin(dec / 2);
+            }
+            
         }
         public static int Bin2dec(int[] bin)
         {
